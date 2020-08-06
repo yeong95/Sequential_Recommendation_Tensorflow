@@ -3,9 +3,9 @@ import pandas as pd
 
 def make_datasets(data, len_Seq, len_Tag, len_Pred):
 
-    #file_path = 'input/u.data'
-
-    p = data.groupby('item')['user'].count().reset_index().rename(columns={'user':'item_count'})
+    #file_path = 'input/u.data'  
+    # Delete item that is purchased less than 6
+    p = data.groupby('item')['user'].count().reset_index().rename(columns={'user':'item_count'})  
     data = pd.merge(data,p,how='left',on='item')
     data = data[data['item_count'] > 5].drop(['item_count'],axis=1)
 
