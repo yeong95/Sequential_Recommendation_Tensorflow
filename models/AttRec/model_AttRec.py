@@ -58,7 +58,7 @@ class AttRec(object):
             #Look up embedding for targets and negative samples
 
             u = tf.nn.embedding_lookup(self.user_rep_emb, in_Usr) #[B,e]
-            u = tf.clip_by_norm(u, 1, -1) # L2 norm
+            u = tf.clip_by_norm(u, 1, -1) # row-wise L2 norm
 
             pos_v = tf.nn.embedding_lookup(self.item_rep_emb, in_Pos) #[B,pos,e]
             pos_v = tf.clip_by_norm(pos_v,1,-1)
