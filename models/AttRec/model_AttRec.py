@@ -38,7 +38,7 @@ class AttRec(object):
                 tf.get_variable("item_emb", [self.item_count, self.emb_size],initializer=self.u_init) #[N,e]
             self.item_rep_emb = item_rep_emb = \
                 tf.get_variable("item_rep_emb", [self.item_count, self.emb_size],initializer=self.init) #[N,e]
-            self.user_rep_emb = user_reo_emb = \
+            self.user_rep_emb = user_rep_emb = \
                 tf.get_variable("user_rep_emb", [self.user_count, self.emb_size],initializer=self.init) #[N,e]
 
 
